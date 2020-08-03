@@ -70,3 +70,12 @@ bottomContents[1].querySelector("h4").textContent = siteContent["main-content"][
 bottomContents[1].querySelector("p").textContent = siteContent["main-content"]["product-content"];
 bottomContents[2].querySelector("h4").textContent = siteContent["main-content"]["vision-h4"];
 bottomContents[2].querySelector("p").textContent = siteContent["main-content"]["vision-content"];
+
+const contact = document.querySelector(".contact");
+contact.querySelector("h4").textContent = siteContent.contact["contact-h4"];
+const contactParas = contact.querySelectorAll("p");
+contactParas[0].textContent = siteContent.contact.address;
+contactParas[1].textContent = siteContent.contact.phone;
+contactParas[2].textContent = siteContent.contact.email;
+
+document.querySelector("footer p").textContent = siteContent.footer.copyright;
