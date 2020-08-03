@@ -42,18 +42,23 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const navLinks = document.querySelectorAll("nav a"); // all links inside the nav element
-navLinks[0].textContent = siteContent.nav["nav-item-1"];
+/*navLinks[0].textContent = siteContent.nav["nav-item-1"];
 navLinks[1].textContent = siteContent.nav["nav-item-2"];
 navLinks[2].textContent = siteContent.nav["nav-item-3"];
 navLinks[3].textContent = siteContent.nav["nav-item-4"];
 navLinks[4].textContent = siteContent.nav["nav-item-5"];
-navLinks[5].textContent = siteContent.nav["nav-item-6"];
+navLinks[5].textContent = siteContent.nav["nav-item-6"];*/
 
-document.querySelector("header img").setAttribute("src", siteContent.nav["img-src"]);
+navLinks.forEach((item, index) => {
+  item.textContent = siteContent.nav["nav-item-" + (index + 1)]; // nav-item-1 to nav-item-6
+  item.style = "color: green";
+});
+
+document.querySelector("#logo-img").setAttribute("src", siteContent.nav["img-src"]); // set img src attributes by ID
 
 document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
 document.querySelector(".cta-text button").textContent = siteContent.cta.button;
-document.querySelector(".cta img").setAttribute("src", siteContent.cta["img-src"]);
+document.querySelector("#cta-img").setAttribute("src", siteContent.cta["img-src"]);
 
 const topContents = document.querySelectorAll(".top-content .text-content");
 topContents[0].querySelector("h4").textContent = siteContent["main-content"]["features-h4"];
@@ -79,3 +84,13 @@ contactParas[1].textContent = siteContent.contact.phone;
 contactParas[2].textContent = siteContent.contact.email;
 
 document.querySelector("footer p").textContent = siteContent.footer.copyright;
+
+// add new items to nav
+
+const nav7 = navLinks[0].cloneNode(true);
+nav7.textContent = "Jobs";
+
+const nav8 = navLinks[0].cloneNode(true);
+nav8.textContent = "Outreach";
+
+document.querySelector("nav").append(nav7, nav8);
