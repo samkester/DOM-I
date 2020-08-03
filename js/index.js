@@ -48,3 +48,25 @@ navLinks[2].textContent = siteContent.nav["nav-item-3"];
 navLinks[3].textContent = siteContent.nav["nav-item-4"];
 navLinks[4].textContent = siteContent.nav["nav-item-5"];
 navLinks[5].textContent = siteContent.nav["nav-item-6"];
+
+document.querySelector("header img").setAttribute("src", siteContent.nav["img-src"]);
+
+document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
+document.querySelector(".cta-text button").textContent = siteContent.cta.button;
+document.querySelector(".cta img").setAttribute("src", siteContent.cta["img-src"]);
+
+const topContents = document.querySelectorAll(".top-content .text-content");
+topContents[0].querySelector("h4").textContent = siteContent["main-content"]["features-h4"];
+topContents[0].querySelector("p").textContent = siteContent["main-content"]["features-content"];
+topContents[1].querySelector("h4").textContent = siteContent["main-content"]["about-h4"];
+topContents[1].querySelector("p").textContent = siteContent["main-content"]["about-content"];
+
+document.querySelector("#middle-img").setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+const bottomContents = document.querySelectorAll(".bottom-content .text-content");
+bottomContents[0].querySelector("h4").textContent = siteContent["main-content"]["services-h4"];
+bottomContents[0].querySelector("p").textContent = siteContent["main-content"]["services-content"];
+bottomContents[1].querySelector("h4").textContent = siteContent["main-content"]["product-h4"];
+bottomContents[1].querySelector("p").textContent = siteContent["main-content"]["product-content"];
+bottomContents[2].querySelector("h4").textContent = siteContent["main-content"]["vision-h4"];
+bottomContents[2].querySelector("p").textContent = siteContent["main-content"]["vision-content"];
